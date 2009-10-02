@@ -1,0 +1,32 @@
+inherit qt4
+
+DESCRIPTION="Qt-based libraries for Last.fm"
+HOMEPAGE="http://github.com/mxcl/liblastfm/"
+SRC_URI="http://cdn.last.fm/src/${P}.tar.bz2"
+PATCH_URI="0.3.0-cygwin-not-win32.patch
+           0.3.0-visibility.patch"
+
+PKG_NAMES="${PN} ${PN}0 ${PN}-devel"
+liblastfm0_CONTENTS="usr/bin/*-0.dll usr/share/doc/"
+liblastfm_devel_CONTENTS="usr/include/ usr/lib/"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	check_prog_req ruby
+	./configure --prefix /usr --release --no-strip || error "configure failed"
+	cygmake
+}
+
+src_test() {
+	cd ${B}
+	./_bin/tests
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	dodir /usr/bin
+	mv ${D}/usr/lib/*.dll ${D}/usr/bin/
+}

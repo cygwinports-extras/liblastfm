@@ -1,0 +1,5 @@
+category: Audio
+sdesc: "Qt4 Last.fm library (sources)"
+ldesc: "liblastfm is a collection of libraries based on Qt4 to help you 
+integrate Last.fm services into your rich desktop software. It is 
+officially supported software developed by Last.fm staff."
