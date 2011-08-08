@@ -1,9 +1,11 @@
-inherit qt4
+GIT_URI="git://github.com/mxcl/liblastfm.git"
+GIT_TAG=${PV}
+inherit qt4 git
 
 DESCRIPTION="Qt-based libraries for Last.fm"
 HOMEPAGE="http://github.com/mxcl/liblastfm/"
-SRC_URI="http://cdn.last.fm/src/${P}.tar.bz2"
-PATCH_URI="0.3.0-cygwin-not-win32.patch
+#SRC_URI="http://cdn.last.fm/src/${P}.tar.bz2"
+PATCH_URI="0.3.3-cygwin-not-win32.patch
            0.3.0-visibility.patch"
 
 PKG_NAMES="${PN} ${PN}0 ${PN}-devel"
