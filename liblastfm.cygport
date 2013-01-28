@@ -1,0 +1,19 @@
+GIT_URI="git://github.com/lastfm/liblastfm.git"
+GIT_TAG=${PV}
+inherit qt4-cmake git
+
+NAME="liblastfm"
+VERSION=1.0.6
+RELEASE=1
+CATEGORY="Audio"
+SUMMARY="Qt4 Last.fm library"
+DESCRIPTION="liblastfm is a collection of libraries based on Qt4 to help you
+integrate Last.fm services into your rich desktop software. It is officially
+supported software developed by Last.fm staff."
+HOMEPAGE="http://github.com/lastfm/liblastfm/"
+#SRC_URI="http://cdn.last.fm/src/${P}.tar.bz2"
+
+PKG_NAMES="${PN}1 ${PN}-devel"
+liblastfm1_CONTENTS="usr/bin/*-1.dll usr/share/doc/"
+liblastfm_devel_REQUIRES="libQtCore4-devel libQtNetwork4-devel libQtXml4-devel"
+liblastfm_devel_CONTENTS="usr/include/ usr/lib/"

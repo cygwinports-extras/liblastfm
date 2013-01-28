@@ -1,7 +1,0 @@
-category: Audio
-requires: liblastfm0 libQtCore4-devel libQtNetwork4-devel libQtXml4-devel
-external-source: liblastfm
-sdesc: "Qt4 Last.fm libraries (development)"
-ldesc: "liblastfm is a collection of libraries based on Qt4 to help you 
-integrate Last.fm services into your rich desktop software. It is 
-officially supported software developed by Last.fm staff."
